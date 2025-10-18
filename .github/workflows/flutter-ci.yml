@@ -1,4 +1,4 @@
-name: Flutter CI (Android + Web + Windows)
+name: Flutter CI (Android Debug+Release, Web, Windows)
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java
+      - name: Set up Java (Android Gradle Plugin req.)
         uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -23,16 +23,28 @@ jobs:
           flutter-version: '3.22.0'
           channel: 'stable'
 
-      - name: Create platforms (Android only, force valid name)
-        run: flutter create --platforms=android --project-name neurocare_connect .
+      # IMPORTANT : crée la plateforme Android ici, avec un nom de projet valide et un org unique
+      - name: Create Android platform (force valid name + org)
+        run: flutter create --platforms=android --project-name neurocare_connect --org tech.neurocareconnect .
 
       - name: Flutter pub get
         run: flutter pub get
 
+      # APK DEBUG (installable sans clé de prod)
+      - name: Build APK (debug)
+        run: flutter build apk --debug
+
+      - name: Upload APK artifact (debug)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
+
+      # APK RELEASE (non signé par défaut ; utile pour tests/CI)
       - name: Build APK (release)
         run: flutter build apk --release
 
-      - name: Upload APK artifact
+      - name: Upload APK artifact (release)
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
@@ -52,7 +64,7 @@ jobs:
       - name: Enable web
         run: flutter config --enable-web
 
-      - name: Create platforms (Web only, force valid name)
+      - name: Create Web platform (force valid name)
         run: flutter create --platforms=web --project-name neurocare_connect .
 
       - name: Flutter pub get
@@ -81,7 +93,7 @@ jobs:
       - name: Enable Windows desktop
         run: flutter config --enable-windows-desktop
 
-      - name: Create platforms (Windows only, force valid name)
+      - name: Create Windows platform (force valid name)
         run: flutter create --platforms=windows --project-name neurocare_connect .
 
       - name: Flutter pub get
@@ -90,8 +102,13 @@ jobs:
       - name: Build Windows (release)
         run: flutter build windows --release
 
-      - name: Upload Windows artifact
+      # Archive prête à l'emploi (contient l'EXE + dll + assets)
+      - name: Zip Windows release
+        run: |
+          powershell -Command "Compress-Archive -Path 'build/windows/x64/runner/Release/*' -DestinationPath 'build/windows/x64/runner/windows-release.zip' -Force"
+
+      - name: Upload Windows ZIP artifact
         uses: actions/upload-artifact@v4
         with:
-          name: windows-release
-          path: build/windows/x64/runner/Release
+          name: windows-release-zip
+          path: build/windows/x64/runner/windows-release.zip
