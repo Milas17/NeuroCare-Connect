@@ -23,11 +23,11 @@ jobs:
           flutter-version: '3.22.0'
           channel: 'stable'
 
-      - name: Flutter pub get
-        run: flutter pub get
-
       - name: Create platforms (Android only, force valid name)
         run: flutter create --platforms=android --project-name neurocare_connect .
+
+      - name: Flutter pub get
+        run: flutter pub get
 
       - name: Build APK (release)
         run: flutter build apk --release
@@ -42,9 +42,56 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'
           channel: 'stable'
+
       - name: Enable web
+        run: flutter config --enable-web
+
+      - name: Create platforms (Web only, force valid name)
+        run: flutter create --platforms=web --project-name neurocare_connect .
+
+      - name: Flutter pub get
+        run: flutter pub get
+
+      - name: Build Web (release)
+        run: flutter build web --release
+
+      - name: Upload Web artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: build/web
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.0'
+          channel: 'stable'
+
+      - name: Enable Windows desktop
+        run: flutter config --enable-windows-desktop
+
+      - name: Create platforms (Windows only, force valid name)
+        run: flutter create --platforms=windows --project-name neurocare_connect .
+
+      - name: Flutter pub get
+        run: flutter pub get
+
+      - name: Build Windows (release)
+        run: flutter build windows --release
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-release
+          path: build/windows/x64/runner/Release
