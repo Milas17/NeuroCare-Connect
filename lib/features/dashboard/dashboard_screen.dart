@@ -10,14 +10,14 @@ class DashboardScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final role = ref.watch(currentUserRoleProvider);
     return Scaffold(
-      appBar: AppBar(title: Text('Dashboard — ${role.name}')),
+      appBar: AppBar(title: Text('Dashboard — ${role?.name ?? 'invité'}')),
       body: GridView.count(
         padding: const EdgeInsets.all(16),
         crossAxisCount: 2,
         childAspectRatio: 1.1,
         children: [
           _CardBtn('Téléconsultation', Icons.video_call, () => AppRouter.goTelemed(context)),
-          _CardBtn('Soins à domicile', Icons.home_health, () => AppRouter.goHomeCare(context)),
+          _CardBtn('Soins à domicile', Icons.health_and_safety, () => AppRouter.goHomeCare(context)),
           _CardBtn('Transport (VSL)', Icons.local_taxi, () => AppRouter.goTransport(context)),
           _CardBtn('EEG/ENMG', Icons.monitor_heart, () => AppRouter.goEeg(context)),
           _CardBtn('Académie', Icons.school, () => AppRouter.goAcademy(context)),

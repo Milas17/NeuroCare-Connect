@@ -30,7 +30,7 @@ final routerProvider = Provider<GoRouter>((ref) {
     ],
     redirect: (ctx, state) {
       final role = ref.read(currentUserRoleProvider);
-      if (state.subloc == '/' || role != null) return null;
+      if (state.matchedLocation == '/' || role != null) return null;
       return '/';
     },
   );

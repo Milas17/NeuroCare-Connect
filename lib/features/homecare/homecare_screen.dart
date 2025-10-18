@@ -64,7 +64,7 @@ class _HomeCareScreenState extends ConsumerState<HomeCareScreen> {
                   const Text('Mes demandes', style: TextStyle(fontWeight: FontWeight.bold)),
                   const SizedBox(height: 8),
                   ...list.map((e) => ListTile(
-                    leading: const Icon(Icons.home_health),
+                    leading: const Icon(Icons.health_and_safety),
                     title: Text(e.patientName),
                     subtitle: Text('${e.address} — ${e.date.toString()}\n${e.need}'),
                   ))
