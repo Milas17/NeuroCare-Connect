@@ -1,16 +1,16 @@
 [
   {
     "id": "w1",
-    "title": "EEG en neuropédiatrie — cas pratiques",
-    "date": "2025-11-05",
-    "speaker": "Dr. N. C.",
-    "url": "https://example.com"
+    "title": "EEG basics",
+    "url": "https://example.com/webinar/eeg-basics",
+    "duration": "45 min",
+    "description": "Introduction aux principes de l'EEG."
   },
   {
     "id": "w2",
-    "title": "Prise en charge des épilepsies de l’enfant",
-    "date": "2025-12-02",
-    "speaker": "Dr. X",
-    "url": "https://example.com"
+    "title": "Teleconsultation best practices",
+    "url": "https://example.com/webinar/telemed",
+    "duration": "30 min",
+    "description": "Bonnes pratiques pour la téléconsultation."
   }
 ]
