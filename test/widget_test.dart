@@ -1,30 +1,30 @@
-import 'package:flutter_test/flutter_test.dart';
+// This is a basic Flutter widget test.
+//
+// To perform an interaction with a widget in your test, use the WidgetTester
+// utility that Flutter provides. For example, you can send tap and scroll
+// gestures. You can also use WidgetTester to find child widgets in the widget
+// tree, read text, and verify that the values of widget properties are correct.
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:neurocare_connect/main.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+import 'package:kivicare_flutter/main.dart';
 
 void main() {
-  testWidgets('Dashboard -> Télémed : prise de RDV mémorisée', (WidgetTester tester) async {
-    await tester.pumpWidget(ChangeNotifierProvider(create: (_) => AppState(), child: MyApp()));
-    await tester.pumpAndSettle();
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(MyApp());
 
-    // Le tile Télémed existe
-    expect(find.text('Télémed'), findsOneWidget);
+    // Verify that our counter starts at 0.
+    expect(find.text('0'), findsOneWidget);
+    expect(find.text('1'), findsNothing);
 
-    // Ouvrir la page Télémed
-    await tester.tap(find.widgetWithText(ElevatedButton, 'Télémed'));
-    await tester.pumpAndSettle();
+    // Tap the '+' icon and trigger a frame.
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
 
-    // On voit la liste des médecins
-    expect(find.text('Médecins'), findsOneWidget);
-
-    // Appuyer sur "Prendre RDV" (premier bouton trouvé)
-    final rdvButton = find.widgetWithText(ElevatedButton, 'Prendre RDV').first;
-    await tester.tap(rdvButton);
-    await tester.pumpAndSettle();
-
-    // La section "Mes RDV" apparaît et contient au moins un élément
-    expect(find.text('Mes RDV'), findsOneWidget);
-    expect(find.byType(ListTile), findsWidgets);
+    // Verify that our counter has incremented.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
   });
 }

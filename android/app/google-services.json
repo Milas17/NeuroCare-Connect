@@ -1,0 +1,78 @@
+{
+  "project_info": {
+    "project_number": "1030276386601",
+    "project_id": "kivicare-5d319",
+    "storage_bucket": "kivicare-5d319.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030276386601:android:41c50003711161d13ab138",
+        "android_client_info": {
+          "package_name": "com.iqonic.kivicare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030276386601-9cadjosp88kq8cqsarm7nngvg47ohova.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iqonic.kivicare",
+            "certificate_hash": "2d4b16b11db216962db3f97ac5397e1473c186fa"
+          }
+        },
+        {
+          "client_id": "1030276386601-d617vnv0uec5unjmv9fbcue1n2m3p342.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iqonic.kivicare",
+            "certificate_hash": "f26458f2f6e635322612fb42542bef28ec9fe018"
+          }
+        },
+        {
+          "client_id": "1030276386601-r91bf7dgdn4lcehp0m94uijpiefjsmug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iqonic.kivicare",
+            "certificate_hash": "4a092f8d9b7e2aaf99a89109a4ee4d527c06a6fd"
+          }
+        },
+        {
+          "client_id": "1030276386601-veq9creuf08vis36er7mqmaljs970m14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iqonic.kivicare",
+            "certificate_hash": "884b2947b6c43f1ae1d4c74beae6196439223cfd"
+          }
+        },
+        {
+          "client_id": "1030276386601-jmmro6118lff99i2m3kv7cboqopf22qp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwmwUrbDgXy47B7uu5m_5-I42c3v4TFNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030276386601-jmmro6118lff99i2m3kv7cboqopf22qp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1030276386601-8cb5ck8gctvqhnrhp9jf2jnj53rqh0g3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.iqonic.kivicare"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
