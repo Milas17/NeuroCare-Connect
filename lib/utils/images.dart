@@ -5,7 +5,8 @@ const walk_through_3 = "images/walkThrough3.png";
 const walk_through_4 = "images/walkThrough4.png";
 const darkModeNoImage = "images/darkModeNoImage.png";
 const noDataFound = "images/noDataFound.png";
-const appIcon = "images/appIcon.png";
+const appIcon = "images/logo_square.png";
+const appLogo = "images/logo.png";
 
 const ic_no_internet_screen = "images/ic_no_internet_screen.png";
 

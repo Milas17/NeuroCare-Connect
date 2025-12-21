@@ -88,6 +88,7 @@ dev_dependencies:
     sdk: flutter
   mobx_codegen: ^2.7.4
   build_runner: ^2.9.0
+  flutter_launcher_icons: ^0.10.0
 
   #dart run build_runner build --delete-conflicting-outputs
 
@@ -103,3 +104,9 @@ flutter:
     - images/flags/
     - images/filesFormat/
     - images/icons/ic_addToCart.png
+
+# Configuration for flutter_launcher_icons
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/logo_square.png"

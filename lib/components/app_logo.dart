@@ -14,15 +14,8 @@ class AppLogo extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset(appIcon, height: size ?? 100, width: size ?? 100).center(),
-        26.height,
-        RichTextWidget(
-          list: [
-            TextSpan(text: APP_FIRST_NAME, style: boldTextStyle(size: 32, letterSpacing: 2)),
-            TextSpan(text: APP_SECOND_NAME, style: primaryTextStyle(size: 32, letterSpacing: 2)),
-          ],
-        ).center(),
-        8.height,
+        Image.asset(appLogo, height: size ?? 80).center(),
+        12.height,
       ],
     );
   }
