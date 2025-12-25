@@ -1,165 +1,264 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:firebase_core/firebase_core.dart';
+import 'package:app_links/app_links.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:yourappname/pages/splash.dart';
+import 'package:yourappname/pages/videocall/provider/videocallprovider.dart';
+import 'package:yourappname/pages/videocall/service/my_video_call_notification_handler.dart';
+import 'package:yourappname/provider/addmedicineprovider.dart';
+import 'package:yourappname/provider/addworkslotprovider.dart';
+import 'package:yourappname/provider/appointmentdetailprovider.dart';
+import 'package:yourappname/provider/appointmentprovider.dart';
+import 'package:yourappname/provider/chatprovider.dart';
+import 'package:yourappname/provider/commentprovider.dart';
+import 'package:yourappname/provider/feedbackprovider.dart';
+import 'package:yourappname/provider/forgotpasswordprovider.dart';
+import 'package:yourappname/provider/historyprovider.dart';
+import 'package:yourappname/provider/homeprovider.dart';
+import 'package:yourappname/provider/generalprovider.dart';
+import 'package:yourappname/provider/listofappointmentprovider.dart';
+import 'package:yourappname/provider/notificationprovider.dart';
+import 'package:yourappname/provider/editprofileprovider.dart';
+import 'package:yourappname/provider/patienthistoryprovider.dart';
+import 'package:yourappname/provider/rescheduleprovider.dart';
+import 'package:yourappname/provider/seeallprovider.dart';
+import 'package:yourappname/provider/writeprescriptionprovider.dart';
+import 'package:yourappname/utils/colors.dart';
+import 'package:yourappname/utils/constant.dart';
+import 'package:yourappname/utils/sharedpre.dart';
+import 'package:yourappname/utils/utils.dart';
+import 'package:yourappname/webservice/pushnotificationservice.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:kivicare_flutter/app_theme.dart';
-import 'package:kivicare_flutter/config.dart';
-import 'package:kivicare_flutter/locale/app_localizations.dart';
-import 'package:kivicare_flutter/locale/base_language_key.dart';
-import 'package:kivicare_flutter/locale/language_en.dart';
-import 'package:kivicare_flutter/model/language_model.dart';
-import 'package:kivicare_flutter/network/auth_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/store/DoctorAppStore.dart';
-import 'package:kivicare_flutter/screens/patient/store/patient_store.dart';
-import 'package:kivicare_flutter/screens/receptionist/store/ReceptionistAppStore.dart';
-import 'package:kivicare_flutter/screens/splash_screen.dart';
-import 'package:kivicare_flutter/store/AppStore.dart';
-import 'package:kivicare_flutter/store/AppointmentAppStore.dart';
-import 'package:kivicare_flutter/store/ListAppStore.dart';
-import 'package:kivicare_flutter/store/MultiSelectStore.dart';
-import 'package:kivicare_flutter/store/PermissionStore.dart';
-import 'package:kivicare_flutter/store/ShopStore.dart';
-import 'package:kivicare_flutter/store/UserStore.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/push_notification_service.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_foreground_task/flutter_foreground_task.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_locales/flutter_locales.dart';
+import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-import 'network/services/default_firebase_config.dart';
-import 'utils/app_common.dart';
+import 'firebase_options.dart';
+import 'pages/all_file_viewer/provider/file_viewer_provider.dart';
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 
 @pragma('vm:entry-point')
-Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  log('${FirebaseMsgConst.notificationDataKey} : ${message.data}');
-  log('${FirebaseMsgConst.notificationKey} : ${message.notification}');
-  log('${FirebaseMsgConst.notificationTitleKey} : ${message.notification!.title}');
-  log('${FirebaseMsgConst.notificationBodyKey} : ${message.notification!.body}');
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  if (kDebugMode) {
+    printLog("Handling a background message: ${message.messageId}");
+    printLog('Message data: ${message.data}');
+    printLog('Message notification: ${message.notification?.title}');
+    printLog('Message notification: ${message.notification?.body}');
+  }
 }
 
-late PackageInfoData packageInfo;
+@pragma('vm:entry-point')
+Future<void> setVideoCallHandler() async {
+  FlutterForegroundTask.setTaskHandler(MyTaskHandler());
+}
 
-AppStore appStore = AppStore();
-PatientStore patientStore = PatientStore();
-ListAppStore listAppStore = ListAppStore();
-AppointmentAppStore appointmentAppStore = AppointmentAppStore();
-MultiSelectStore multiSelectStore = MultiSelectStore();
-DoctorAppStore doctorAppStore = DoctorAppStore();
-ReceptionistAppStore receptionistAppStore = ReceptionistAppStore();
-PermissionStore permissionStore = PermissionStore();
-ShopStore shopStore = ShopStore();
-
-UserStore userStore = UserStore();
-ListAnimationType listAnimationType = ListAnimationType.FadeIn;
-PageRouteAnimation pageAnimation = PageRouteAnimation.Fade;
-PageRouteAnimation signInAnimation = PageRouteAnimation.Scale;
-
-Duration pageAnimationDuration = Duration(milliseconds: 500);
-
-List<String> paymentMethodList = [];
-List<String> paymentMethodImages = [];
-List<String> paymentModeList = [];
-
-BaseLanguage locale = LanguageEn();
-
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(name: DefaultFirebaseConfig.platformOptions.projectId,options: DefaultFirebaseConfig.platformOptions).then((value) {}).then((value) async {
-    await PushNotificationService().initFirebaseMessaging();
-  }).catchError((e) {
-    log('------FIREBASE INITIALIZATION ERROR-----------\n${e.toString()}');
+
+  await Firebase.initializeApp(
+      name: Constant.appName, options: DefaultFirebaseOptions.currentPlatform);
+
+  await Locales.init(['en', 'ar', 'hi']);
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+  final NotificationAppLaunchDetails? notificationAppLaunchDetails = !kIsWeb &&
+          Platform.isLinux
+      ? null
+      : await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
+  printLog(
+      "notificationAppLaunchDetails ====> ${notificationAppLaunchDetails?.notificationResponse}");
+
+  await PushNotificationService().setupInteractedMessage();
+
+  await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+    alert: true, // Required to display a heads up notification
+    badge: true,
+    sound: true,
+  );
+
+  final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+  final FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((value) {
+    runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => GeneralProvider()),
+          ChangeNotifierProvider(create: (_) => HomeProvider()),
+          ChangeNotifierProvider(create: (_) => AppointmentProvider()),
+          ChangeNotifierProvider(create: (_) => AppointmentDetailProvider()),
+          ChangeNotifierProvider(create: (_) => WritePrescriptionProvider()),
+          ChangeNotifierProvider(create: (_) => AddMedicineProvider()),
+          ChangeNotifierProvider(create: (_) => NotificationProvider()),
+          ChangeNotifierProvider(create: (_) => EditProfileProvider()),
+          ChangeNotifierProvider(create: (_) => AddWorkSlotProvider()),
+          ChangeNotifierProvider(create: (_) => ListOfAppointmentProvider()),
+          ChangeNotifierProvider(create: (_) => HistoryProvider()),
+          ChangeNotifierProvider(create: (_) => FeedbackProvider()),
+          ChangeNotifierProvider(create: (_) => SeeallProvider()),
+          ChangeNotifierProvider(create: (_) => CommentProvider()),
+          ChangeNotifierProvider(create: (_) => ForgotPasswordProvider()),
+          ChangeNotifierProvider(create: (_) => Rescheduleprovider()),
+          ChangeNotifierProvider(create: (_) => PatientHistoryProvider()),
+          ChangeNotifierProvider(create: (_) => VideoCallProvider()),
+          ChangeNotifierProvider(create: (_) => FileViewerProvider()),
+          ChangeNotifierProvider(
+              create: (_) => ChatProvider(
+                    firebaseFirestore: firebaseFirestore,
+                    firebaseStorage: firebaseStorage,
+                  )),
+        ],
+        child: const MyApp(),
+      ),
+    );
   });
-
-  defaultBlurRadius = 0;
-  defaultSpreadRadius = 0.0;
-
-  defaultAppBarElevation = 2;
-  appBarBackgroundColorGlobal = primaryColor;
-  appButtonBackgroundColorGlobal = primaryColor;
-
-  defaultAppButtonTextColorGlobal = Colors.white;
-  defaultAppButtonElevation = 0.0;
-  passwordLengthGlobal = 6;
-  defaultRadius = 12;
-  defaultLoaderAccentColorGlobal = primaryColor;
-
-  await initialize(aLocaleLanguageList: languageList());
-   // Load saved clinic data
-  await userStore.loadUserClinicFromPrefs(); 
-
-  setupRemoteConfig().then((value) {
-    log('------FIREBASE REMOTE CONFIG COMPLETED-----------');
-  }).catchError((e) {
-    log('------FIREBASE REMOTE CONFIG ERROR-----------');
-  });
-
-  appStore.setLanguage(getStringAsync(SELECTED_LANGUAGE_CODE, defaultValue: DEFAULT_LANGUAGE));
-  appStore.setLoggedIn(getBoolAsync(IS_LOGGED_IN));
-
-  await defaultValue();
-
-  HttpOverrides.global = HttpOverridesSkipCertificate();
-
-  packageInfo = await getPackageInfo();
-
-  appStore.setAppVersion(packageInfo.versionName.validate());
-
-  int themeModeIndex = getIntAsync(THEME_MODE_INDEX);
-  if (themeModeIndex == THEME_MODE_LIGHT) {
-    appStore.setDarkMode(false);
-  } else if (themeModeIndex == THEME_MODE_DARK) {
-    appStore.setDarkMode(true);
-  }
-
-  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  //DeepLink
+  late final AppLinks _appLinks;
+
   @override
   void initState() {
-    super.initState();
-    Connectivity().onConnectivityChanged.listen((event) {
-      appStore.setInternetStatus(!event.contains(ConnectivityResult.none));
-    });
+    //Saved UserID in Constant for Future use
+    _initDeepLinks();
 
-    removePermission();
+    Utils.getUserId();
+    selectlanguage();
+
+    // configLocalNotification();
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: colorPrimaryDark));
+    // _requestPermissions();
+    super.initState();
+  }
+
+  // Future<void> _requestPermissions() async {
+  //   if (Platform.isIOS || Platform.isMacOS) {
+  //     await flutterLocalNotificationsPlugin
+  //         .resolvePlatformSpecificImplementation<
+  //             IOSFlutterLocalNotificationsPlugin>()
+  //         ?.requestPermissions(
+  //           alert: true,
+  //           badge: true,
+  //           sound: true,
+  //         );
+  //     await flutterLocalNotificationsPlugin
+  //         .resolvePlatformSpecificImplementation<
+  //             MacOSFlutterLocalNotificationsPlugin>()
+  //         ?.requestPermissions(
+  //           alert: true,
+  //           badge: true,
+  //           sound: true,
+  //         );
+  //   }
+  // }
+
+  Future<void> selectlanguage() async {
+    SharedPre sharedPre = SharedPre();
+    String? selectedLanguage = await sharedPre.read("language_code");
+    if (selectedLanguage == null || selectedLanguage == "") {
+      await sharedPre.save('language_code', 'en');
+    }
+  }
+
+  //DeepLink Init
+  Future<void> _initDeepLinks() async {
+    _appLinks = AppLinks();
+
+    // App launched by link
+    final initialLink = await _appLinks.getInitialLink();
+    if (initialLink != null) {
+      _handleDeepLink(initialLink);
+    }
+
+    // App opened again with a link
+    _appLinks.uriLinkStream.listen((uri) {
+      _handleDeepLink(uri);
+    });
+  }
+
+  void _handleDeepLink(Uri uri) {
   }
 
   @override
   void dispose() {
     super.dispose();
+    //VideoCallBackgroundService.stopForegroundService();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Observer(
-      builder: (_) => MaterialApp(
-        title: APP_NAME,
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        themeMode: appStore.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
+    return LocaleBuilder(
+      builder: (locale) => MaterialApp(
+        localizationsDelegates: Locales.delegates,
+        supportedLocales: Locales.supportedLocales,
+        locale: locale,
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
-        navigatorKey: navigatorKey,
-        supportedLocales: Language.languagesLocale(),
-        localeResolutionCallback: (locale, supportedLocales) => locale,
-        locale: Locale(appStore.selectedLanguageCode),
-        localizationsDelegates: [
-          AppLocalizations(),
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
+        home: const Splash(),
       ),
     );
   }
+
+  // void configLocalNotification() {
+  //   AndroidInitializationSettings initializationSettingsAndroid =
+  //       const AndroidInitializationSettings('app_icon');
+  //   DarwinInitializationSettings initializationSettingsIOS =
+  //       const DarwinInitializationSettings();
+  //   InitializationSettings initializationSettings = InitializationSettings(
+  //       android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
+  //   flutterLocalNotificationsPlugin.initialize(
+  //     initializationSettings,
+  //   );
+  // }
+
+  // What to do when the user opens/taps on a notification
+  // void _handleNotificationOpened(OSNotificationClickEvent result) {
+  //   /* 
+  //    1-appointment, 2-comment, 3-following, 
+  //    4-Case Update, 5-Court Date, 6-Upload Document */
+
+  //   printLog(
+  //       "setNotificationOpenedHandler type ===> ${result.notification.additionalData?['type']}");
+  //   printLog(
+  //       "setNotificationOpenedHandler employee_id ===> ${result.notification.additionalData?['employee_id']}");
+  //   printLog(
+  //       "setNotificationOpenedHandler client_id ===> ${result.notification.additionalData?['client_id']}");
+  //   printLog(
+  //       "setNotificationOpenedHandler appointment_id ===> ${result.notification.additionalData?['appointment_id']}");
+
+  //   int? notiType = result.notification.additionalData?['type'] ?? 0;
+  //   String? employeeID =
+  //       result.notification.additionalData?['employee_id'].toString() ?? "";
+  //   String? clientID =
+  //       result.notification.additionalData?['client_id'].toString() ?? "";
+  //   String? appointmentID =
+  //       result.notification.additionalData?['appointment_id'].toString() ?? "";
+  //   printLog("notiType =====> $notiType");
+  //   printLog("employeeID =====> $employeeID");
+  //   printLog("clientID =====> $clientID");
+  //   printLog("appointmentID =====> $appointmentID");
+  // }
+
+
 }

@@ -1,72 +1,712 @@
 {
   "project_info": {
-    "project_number": "1030276386601",
-    "project_id": "kivicare-5d319",
-    "storage_bucket": "kivicare-5d319.appspot.com"
+    "project_number": "997133946428",
+    "project_id": "dtapps-f3442",
+    "storage_bucket": "dtapps-f3442.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1030276386601:android:41c50003711161d13ab138",
+        "mobilesdk_app_id": "1:997133946428:android:8595c2d0f7169bdb7b7d39",
         "android_client_info": {
-          "package_name": "com.iqonic.kivicare"
+          "package_name": "com.divinetechs.dance"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1030276386601-9cadjosp88kq8cqsarm7nngvg47ohova.apps.googleusercontent.com",
+          "client_id": "997133946428-3g2nv2g2tp90v50rj1s1ro4455s4ftmu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.iqonic.kivicare",
-            "certificate_hash": "2d4b16b11db216962db3f97ac5397e1473c186fa"
+            "package_name": "com.divinetechs.dance",
+            "certificate_hash": "be9cd6d73cd4e4f6c827d1f3c2f5fe8c25918d0f"
           }
         },
         {
-          "client_id": "1030276386601-d617vnv0uec5unjmv9fbcue1n2m3p342.apps.googleusercontent.com",
+          "client_id": "997133946428-eldn6dsj0vvruvn028gleq4ehjr6lhf8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.iqonic.kivicare",
-            "certificate_hash": "f26458f2f6e635322612fb42542bef28ec9fe018"
+            "package_name": "com.divinetechs.dance",
+            "certificate_hash": "2676d632d85510d2bda447fd3faa502427964f92"
           }
         },
         {
-          "client_id": "1030276386601-r91bf7dgdn4lcehp0m94uijpiefjsmug.apps.googleusercontent.com",
+          "client_id": "997133946428-ti6gpnhqlvg4ucbfm3u4hkk273g4a9tu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.iqonic.kivicare",
-            "certificate_hash": "4a092f8d9b7e2aaf99a89109a4ee4d527c06a6fd"
+            "package_name": "com.divinetechs.dance",
+            "certificate_hash": "2225beda9471e48d9bd29a6f679e0317cf09b3a6"
           }
         },
         {
-          "client_id": "1030276386601-veq9creuf08vis36er7mqmaljs970m14.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.iqonic.kivicare",
-            "certificate_hash": "884b2947b6c43f1ae1d4c74beae6196439223cfd"
-          }
-        },
-        {
-          "client_id": "1030276386601-jmmro6118lff99i2m3kv7cboqopf22qp.apps.googleusercontent.com",
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAwmwUrbDgXy47B7uu5m_5-I42c3v4TFNE"
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1030276386601-jmmro6118lff99i2m3kv7cboqopf22qp.apps.googleusercontent.com",
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "1030276386601-8cb5ck8gctvqhnrhp9jf2jnj53rqh0g3.apps.googleusercontent.com",
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.iqonic.kivicare"
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:94a7a5e8c74e234c7b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.doctorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-07a6vdsli8mnad8j3rodjar60qrvq8ko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.doctorapp",
+            "certificate_hash": "e50bc1efd92d1574509326651d8a92fda465e96a"
+          }
+        },
+        {
+          "client_id": "997133946428-9u1ldgoukk99jsv6v4u56l9nk24c11pt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.doctorapp",
+            "certificate_hash": "f0a9aa5faf54044a667307ac2dde6aedfcfc19d4"
+          }
+        },
+        {
+          "client_id": "997133946428-obaqgua5ftd2ag083ies0j8hpa2su87m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.doctorapp",
+            "certificate_hash": "90e091059b10368bd13c4ddd3ebb6ca22a2d0226"
+          }
+        },
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:cf658f670ec2d45c7b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.dtbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:a544d21aa54a94807b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.dtclassified"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-9q51eo8o6qfudm7e2qti1a14cgrgmaha.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtclassified",
+            "certificate_hash": "48d631f942fd7d4dddc74bc99e9b101b06be012f"
+          }
+        },
+        {
+          "client_id": "997133946428-h27isjf5ba3i4kjdhv62sa7k49b16te0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtclassified",
+            "certificate_hash": "5525d7c957a67715441464549050ff0b52552308"
+          }
+        },
+        {
+          "client_id": "997133946428-kvpsvo2rbb4phmqplgfr3p2igut8dono.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtclassified",
+            "certificate_hash": "886cee1dcae8920c1077f0998cd44b14c8bb5f2a"
+          }
+        },
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:28835c41c95b45ad7b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.dtfansonly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-aasrvs52m7f0ukav2gr4ge133c01jkcm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtfansonly",
+            "certificate_hash": "542228df6144b03602fae286e4cf6fb6849bf9d7"
+          }
+        },
+        {
+          "client_id": "997133946428-aauunl0uv1rhaft6tahk60047505akt1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtfansonly",
+            "certificate_hash": "2d6653f811684d3d991ac080efd066c88a10b7f9"
+          }
+        },
+        {
+          "client_id": "997133946428-l7vmkivcbv8gi6h2h732cro7ta1qdorj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtfansonly",
+            "certificate_hash": "f713bc5779676f2ca243c16844b971f463b501df"
+          }
+        },
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:ab61153851cc999e7b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.dtmusic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:2bdaabfb873ec7cd7b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.dtpocketfm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-9dvfq2h6tjg8j12r86qrc16o6cd47v9c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtpocketfm",
+            "certificate_hash": "2d6653f811684d3d991ac080efd066c88a10b7f9"
+          }
+        },
+        {
+          "client_id": "997133946428-e3edc3bbosr7elmdnsusha0e40n771a1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtpocketfm",
+            "certificate_hash": "b3d4e75ecc5cbf5d24ee46d944eb2a16799a46c4"
+          }
+        },
+        {
+          "client_id": "997133946428-hidvbavnoubrllpj7m2phei1g28fnfsa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtpocketfm",
+            "certificate_hash": "0e9ff3ca823536f1e1b55a927503aff7f657b26b"
+          }
+        },
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:19fd4aef32aacc267b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.dtrent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:c9300a9dd6e5ba137b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.dttube"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-aagl9fi9t02fqpcbsh8ar9quhnlmqpic.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dttube",
+            "certificate_hash": "1b3103e0feb95e8faa81edbf90def20fa0257707"
+          }
+        },
+        {
+          "client_id": "997133946428-le9fokcmetmrddqki3sls8tjlk92mdq0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dttube",
+            "certificate_hash": "b9bed82ab2d29d2640e2d28ded21c379f3ca1238"
+          }
+        },
+        {
+          "client_id": "997133946428-rpa7g4kc1f242lvd72viea5174lvbiji.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dttube",
+            "certificate_hash": "ed6596ec81123a462c097afb59be579832cf9fd5"
+          }
+        },
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:adef58b92e03635d7b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.dtvideo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-1h23v1vn5c3aiuak9thgb33nv660afbo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtvideo",
+            "certificate_hash": "eba4d4df165098819d8d60c4c5b4a332f8dd1b52"
+          }
+        },
+        {
+          "client_id": "997133946428-jeojq6tnhpbfh8j8mgmiuj7bg4re6eek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtvideo",
+            "certificate_hash": "2d6653f811684d3d991ac080efd066c88a10b7f9"
+          }
+        },
+        {
+          "client_id": "997133946428-tuh3rn9rht8met7rmhefnke73bqe5c0j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.dtvideo",
+            "certificate_hash": "8496fd6b835edcbc78e5a8bd6d3c1247094f3955"
+          }
+        },
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:e9b37a039119432e7b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.patientapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997133946428:android:023f3d91a3950a7a7b7d39",
+        "android_client_info": {
+          "package_name": "com.divinetechs.patientapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997133946428-3quvqntq622c4cdbcsc71er31cbi88mc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.patientapps",
+            "certificate_hash": "c356ab36569a755981f78a63c350363a041ed2a9"
+          }
+        },
+        {
+          "client_id": "997133946428-r3bfh9pmpn55dbioc8lmfft5cqen3ksb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.patientapps",
+            "certificate_hash": "21fcef378c9a803534cbf00ebd528a6bd9247a13"
+          }
+        },
+        {
+          "client_id": "997133946428-tb1ad6smun256021nq53jer6tgq5bv79.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.divinetechs.patientapps",
+            "certificate_hash": "e50bc1efd92d1574509326651d8a92fda465e96a"
+          }
+        },
+        {
+          "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMEOzA2mOEwO9bWPXEx-oYikQ7TV0RiE"
+        },
+        {
+          "current_key": "AIzaSyDMpYDiQKk4XT3MaY-6l6cyC_kNjNMd2q0"
+        },
+        {
+          "current_key": "AIzaSyD-v4oA2mlFoE_S25WurFufntDLHrXHCFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997133946428-0hnk7iqrfhn6ko2lpcv1edgkeqfg5n8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997133946428-0n2oukcsr889ev4ub4ignnpfdl93v6a7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divinetechs.dtvideo",
+                "app_store_id": "6450538688"
               }
             }
           ]
