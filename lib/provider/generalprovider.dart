@@ -31,11 +31,16 @@ class GeneralProvider extends ChangeNotifier {
 
   Future<void> getOnboardingScreen() async {
     loadingIntro = true;
-    onboardingModel = await ApiService().onBoardingScreen();
-    printLog("onboardingModel status :==> ${onboardingModel.status}");
-    printLog("onboardingModel message :==> ${onboardingModel.message}");
-    loadingIntro = false;
-    notifyListeners();
+    try {
+      onboardingModel = await ApiService().onBoardingScreen();
+      printLog("onboardingModel status :==> ${onboardingModel.status}");
+      printLog("onboardingModel message :==> ${onboardingModel.message}");
+    } catch (e) {
+      printLog("Error in getOnboardingScreen: $e");
+    } finally {
+      loadingIntro = false;
+      notifyListeners();
+    }
   }
 
   Future<void> getSpecialities() async {
@@ -83,28 +88,33 @@ class GeneralProvider extends ChangeNotifier {
 
   Future<void> getGeneralsetting(context) async {
     loading = true;
-    generalSettingModel = await ApiService().genaralSetting();
-    if (generalSettingModel.status == 200 &&
-        (generalSettingModel.result?.length ?? 0) > 0) {
-      for (var i = 0; i < (generalSettingModel.result?.length ?? 0); i++) {
-        sharePref.save(
-          generalSettingModel.result?[i].key.toString() ?? "",
-          generalSettingModel.result?[i].value.toString() ?? "",
-        );
+    try {
+      generalSettingModel = await ApiService().genaralSetting();
+      if (generalSettingModel.status == 200 &&
+          (generalSettingModel.result?.length ?? 0) > 0) {
+        for (var i = 0; i < (generalSettingModel.result?.length ?? 0); i++) {
+          sharePref.save(
+            generalSettingModel.result?[i].key.toString() ?? "",
+            generalSettingModel.result?[i].value.toString() ?? "",
+          );
+        }
+        // Constant.versionCode = await sharedPred.read('app_version');
+        // Constant.userId = await sharedPred.read('userid');
+        // Constant.type = await sharedPred.read('type');
+        Constant.oneSignalAppId =
+            await sharePref.read(Constant.oneSignalAppIdKey);
+        // debugPrint("versionCode==> ${Constant.versionCode}");
+        // debugPrint("userId==> ${Constant.userId}");
+        // debugPrint("type==> ${Constant.type}");
+        debugPrint("oneSignalAppId==> ${Constant.oneSignalAppId}");
       }
-      // Constant.versionCode = await sharedPred.read('app_version');
-      // Constant.userId = await sharedPred.read('userid');
-      // Constant.type = await sharedPred.read('type');
-      Constant.oneSignalAppId =
-          await sharePref.read(Constant.oneSignalAppIdKey);
-      // debugPrint("versionCode==> ${Constant.versionCode}");
-      // debugPrint("userId==> ${Constant.userId}");
-      // debugPrint("type==> ${Constant.type}");
-      debugPrint("oneSignalAppId==> ${Constant.oneSignalAppId}");
+      printLog("genaral_setting status :==> ${generalSettingModel.status}");
+    } catch (e) {
+      printLog("Error in getGeneralsetting: $e");
+    } finally {
+      loading = false;
+      notifyListeners();
     }
-    printLog("genaral_setting status :==> ${generalSettingModel.status}");
-    loading = false;
-    notifyListeners();
   }
 
   Future<void> getPages() async {
