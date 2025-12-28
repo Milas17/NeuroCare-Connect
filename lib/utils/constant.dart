@@ -1,7 +1,7 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Constant {
-  static const String baseurl = 'https://basedtcare.neurocareconnect.tech/public/api/';
+  static const String baseurl = 'https://basedtcare.neurocareconnect.tech/public/api/login';
 
   static const String appName = "NeuroCare Telemed";
   static const String chatAppName = "yourchatappname";

@@ -44,40 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDtOUk23PrTjn_CXbMf36CRcOK7LnHYGos',
-    appId: '1:946063364931:web:2c9415841519ebab57d5f6',
-    messagingSenderId: '946063364931',
-    projectId: 'yourappname-9aca3',
-    authDomain: 'yourappname-9aca3.firebaseapp.com',
-    storageBucket: 'yourappname-9aca3.firebasestorage.app',
+    apiKey: 'AIzaSyCI40j9uTXzmOf9bqPuoRvB1DZaFXPXHc0',
+    appId: '1:214738954591:web:4ad410fb0ba062485f6eea',
+    messagingSenderId: '214738954591',
+    projectId: 'kivicareneurocare',
+    authDomain: 'kivicareneurocare.firebaseapp.com',
+    storageBucket: 'kivicareneurocare.firebasestorage.app',
+    measurementId: 'G-JC681ZPPMD',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAORaonzstIpKxEcvdT14tr44nKnJzO0Co',
-    appId: '1:946063364931:android:cd523b5793563a3257d5f6',
-    messagingSenderId: '946063364931',
-    projectId: 'yourappname-9aca3',
-    storageBucket: 'yourappname-9aca3.firebasestorage.app',
+    apiKey: 'AIzaSyCBwddeG80wz19VNhbQ7rl6bDq49csTgNo',
+    appId: '1:214738954591:android:af631842b1fa21515f6eea',
+    messagingSenderId: '214738954591',
+    projectId: 'kivicareneurocare',
+    storageBucket: 'kivicareneurocare.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDv8lz2mfppOZhU4AH9F2pWx3Os6IcoACg',
-    appId: '1:946063364931:ios:7b130569ab62d92257d5f6',
-    messagingSenderId: '946063364931',
-    projectId: 'yourappname-9aca3',
-    storageBucket: 'yourappname-9aca3.firebasestorage.app',
-    androidClientId: '946063364931-0tvpgi5e3p1h4joss2kso187lolk2qen.apps.googleusercontent.com',
-    iosClientId: '946063364931-mf45cskfiqtc63namugb7n5usvgm8vkq.apps.googleusercontent.com',
-    iosBundleId: 'com.example.yourappname',
+    apiKey: 'AIzaSyDe2FTjoIK44oYsWjwd51nOtkLAt5MIsrA',
+    appId: '1:214738954591:ios:b573181593e10e3d5f6eea',
+    messagingSenderId: '214738954591',
+    projectId: 'kivicareneurocare',
+    storageBucket: 'kivicareneurocare.firebasestorage.app',
+    iosBundleId: 'com.neurocare.neurocaretelemed',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDtOUk23PrTjn_CXbMf36CRcOK7LnHYGos',
-    appId: '1:946063364931:web:b77a759b6b9df96757d5f6',
-    messagingSenderId: '946063364931',
-    projectId: 'yourappname-9aca3',
-    authDomain: 'yourappname-9aca3.firebaseapp.com',
-    storageBucket: 'yourappname-9aca3.firebasestorage.app',
+    apiKey: 'AIzaSyCI40j9uTXzmOf9bqPuoRvB1DZaFXPXHc0',
+    appId: '1:214738954591:web:fa1ce403e06ef5635f6eea',
+    messagingSenderId: '214738954591',
+    projectId: 'kivicareneurocare',
+    authDomain: 'kivicareneurocare.firebaseapp.com',
+    storageBucket: 'kivicareneurocare.firebasestorage.app',
+    measurementId: 'G-4BMH42JX8Z',
   );
 
 }
