@@ -44,40 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCI40j9uTXzmOf9bqPuoRvB1DZaFXPXHc0',
-    appId: '1:214738954591:web:4ad410fb0ba062485f6eea',
-    messagingSenderId: '214738954591',
-    projectId: 'kivicareneurocare',
-    authDomain: 'kivicareneurocare.firebaseapp.com',
-    storageBucket: 'kivicareneurocare.firebasestorage.app',
-    measurementId: 'G-JC681ZPPMD',
+    apiKey: 'AIzaSyC2cNTdovGJEfOADOlBrz3kNyHg0n1a0Vw',
+    appId: '1:453591806698:web:d951c274e479433843dd93',
+    messagingSenderId: '453591806698',
+    projectId: 'neurocare-connect-44235',
+    authDomain: 'neurocare-connect-44235.firebaseapp.com',
+    storageBucket: 'neurocare-connect-44235.firebasestorage.app',
+    measurementId: 'G-VXNK8QBC4Y',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCBwddeG80wz19VNhbQ7rl6bDq49csTgNo',
-    appId: '1:214738954591:android:af631842b1fa21515f6eea',
-    messagingSenderId: '214738954591',
-    projectId: 'kivicareneurocare',
-    storageBucket: 'kivicareneurocare.firebasestorage.app',
+    apiKey: 'AIzaSyA5LepnbmgZ5Jk7oCnF_6wOAuIXCgkJEYE',
+    appId: '1:453591806698:android:5253eab3ba7cd97343dd93',
+    messagingSenderId: '453591806698',
+    projectId: 'neurocare-connect-44235',
+    storageBucket: 'neurocare-connect-44235.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDe2FTjoIK44oYsWjwd51nOtkLAt5MIsrA',
-    appId: '1:214738954591:ios:b573181593e10e3d5f6eea',
-    messagingSenderId: '214738954591',
-    projectId: 'kivicareneurocare',
-    storageBucket: 'kivicareneurocare.firebasestorage.app',
-    iosBundleId: 'com.neurocare.neurocaretelemed',
+    apiKey: 'AIzaSyB3_wgvyEHYVb86zRrOfUn50dtG4YgKRbo',
+    appId: '1:453591806698:ios:23399a9a34d17f4743dd93',
+    messagingSenderId: '453591806698',
+    projectId: 'neurocare-connect-44235',
+    storageBucket: 'neurocare-connect-44235.firebasestorage.app',
+    iosBundleId: 'com.neurocare.connect',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCI40j9uTXzmOf9bqPuoRvB1DZaFXPXHc0',
-    appId: '1:214738954591:web:fa1ce403e06ef5635f6eea',
-    messagingSenderId: '214738954591',
-    projectId: 'kivicareneurocare',
-    authDomain: 'kivicareneurocare.firebaseapp.com',
-    storageBucket: 'kivicareneurocare.firebasestorage.app',
-    measurementId: 'G-4BMH42JX8Z',
+    apiKey: 'AIzaSyC2cNTdovGJEfOADOlBrz3kNyHg0n1a0Vw',
+    appId: '1:453591806698:web:99a7e7487b0c28a543dd93',
+    messagingSenderId: '453591806698',
+    projectId: 'neurocare-connect-44235',
+    authDomain: 'neurocare-connect-44235.firebaseapp.com',
+    storageBucket: 'neurocare-connect-44235.firebasestorage.app',
+    measurementId: 'G-BWK65P7FSW',
   );
 
 }

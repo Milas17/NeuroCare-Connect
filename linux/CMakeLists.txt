@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
 set(BINARY_NAME "yourappname")
-set(APPLICATION_ID "com.example.yourappname")
+set(APPLICATION_ID "com.iqonic.kivicare")
 
 cmake_policy(SET CMP0063 NEW)
 

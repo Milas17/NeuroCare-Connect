@@ -38,7 +38,7 @@ if (keystorePropertiesFile.exists()) {
 //apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    namespace "com.example.yourappname"
+    namespace "com.neurocare.connect"
     compileSdkVersion 36
     ndkVersion "26.1.10909125"
 
@@ -57,7 +57,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.neurocare.neurocaretelemed"
+        applicationId "com.neurocare.connect"
         minSdkVersion 24
         targetSdkVersion 36
         versionCode 7

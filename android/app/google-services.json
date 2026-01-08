@@ -1,65 +1,45 @@
 {
   "project_info": {
-    "project_number": "214738954591",
-    "project_id": "kivicareneurocare",
-    "storage_bucket": "kivicareneurocare.firebasestorage.app"
+    "project_number": "453591806698",
+    "project_id": "neurocare-connect-44235",
+    "storage_bucket": "neurocare-connect-44235.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:214738954591:android:0001ca82ce05e1ea5f6eea",
+        "mobilesdk_app_id": "1:453591806698:android:710b5ef00868971643dd93",
         "android_client_info": {
           "package_name": "com.iqonic.kivicare"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "214738954591-5mb63am55t6aino82citu3nlq7u7jbop.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCBwddeG80wz19VNhbQ7rl6bDq49csTgNo"
+          "current_key": "AIzaSyA5LepnbmgZ5Jk7oCnF_6wOAuIXCgkJEYE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "214738954591-5mb63am55t6aino82citu3nlq7u7jbop.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:214738954591:android:af631842b1fa21515f6eea",
+        "mobilesdk_app_id": "1:453591806698:android:5253eab3ba7cd97343dd93",
         "android_client_info": {
-          "package_name": "com.neurocare.neurocaretelemed"
+          "package_name": "com.neurocare.connect"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "214738954591-5mb63am55t6aino82citu3nlq7u7jbop.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCBwddeG80wz19VNhbQ7rl6bDq49csTgNo"
+          "current_key": "AIzaSyA5LepnbmgZ5Jk7oCnF_6wOAuIXCgkJEYE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "214738954591-5mb63am55t6aino82citu3nlq7u7jbop.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

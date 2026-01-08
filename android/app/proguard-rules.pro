@@ -7,7 +7,7 @@
 -keep class io.flutter.**  { *; }
 -keep class io.flutter.plugins.**  { *; }
 -keep class io.flutter.plugin.editing.** { *; }
--keep class com.example.yourappname.MyFirebaseMessagingService { *; }
+-keep class com.iqonic.kivicare.MyFirebaseMessagingService { *; }
 -dontwarn io.flutter.embedding.**
 -ignorewarnings
 -keep class * {

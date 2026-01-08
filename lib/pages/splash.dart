@@ -26,11 +26,28 @@ class _SplashState extends State<Splash> {
   dynamic userid;
   dynamic firebaseid;
   @override
-  void initState() {
-    generalProvider = Provider.of<GeneralProvider>(context, listen: false);
-    isFirstCheck();
+@override
+void initState() {
+  super.initState(); // Toujours appeler super.initState() en premier
+  generalProvider = Provider.of<GeneralProvider>(context, listen: false);
+  
+  // 1. On lance le check en arrière-plan sans "await"
+  isFirstCheck(); 
 
-    super.initState();
+  // 2. FORCE : On navigue après 3 secondes quoi qu'il arrive
+  Future.delayed(const Duration(seconds: 3), () {
+    if (mounted) {
+       Navigator.pushReplacement(
+         context,
+         MaterialPageRoute(builder: (context) => const Loginselect()),
+       );
+    }
+  });
+}
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override

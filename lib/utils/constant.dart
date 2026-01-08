@@ -6,7 +6,7 @@ class Constant {
   static const String appName = "NeuroCare Telemed";
   static const String chatAppName = "yourchatappname";
   static String appleAppId = "";
-  static String appPackageName = "com.example.yourappname";
+  static String appPackageName = "com.iqonic.kivicare";
   static int zegoAppId = 0;
   static String zegoAppSign = "";
 
