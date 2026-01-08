@@ -63,68 +63,30 @@ Future<void> setVideoCallHandler() async {
 }
 
 Future<void> main() async {
+  // 1. On initialise les composants de base
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-      name: Constant.appName, options: DefaultFirebaseOptions.currentPlatform);
-
-  await Locales.init(['en', 'ar', 'hi']);
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-
-  final NotificationAppLaunchDetails? notificationAppLaunchDetails = !kIsWeb &&
-          Platform.isLinux
-      ? null
-      : await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
-  printLog(
-      "notificationAppLaunchDetails ====> ${notificationAppLaunchDetails?.notificationResponse}");
-
-  await PushNotificationService().setupInteractedMessage();
-
-  await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
-    alert: true, // Required to display a heads up notification
-    badge: true,
-    sound: true,
+  // 2. On lance l'application IMMÉDIATEMENT sans attendre (pas de await ici)
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => GeneralProvider()),
+        // ... gardez tous vos autres providers ici ...
+      ],
+      child: const MyApp(),
+    ),
   );
 
-  final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-  final FirebaseStorage firebaseStorage = FirebaseStorage.instance;
-
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]).then((value) {
-    runApp(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => GeneralProvider()),
-          ChangeNotifierProvider(create: (_) => HomeProvider()),
-          ChangeNotifierProvider(create: (_) => AppointmentProvider()),
-          ChangeNotifierProvider(create: (_) => AppointmentDetailProvider()),
-          ChangeNotifierProvider(create: (_) => WritePrescriptionProvider()),
-          ChangeNotifierProvider(create: (_) => AddMedicineProvider()),
-          ChangeNotifierProvider(create: (_) => NotificationProvider()),
-          ChangeNotifierProvider(create: (_) => EditProfileProvider()),
-          ChangeNotifierProvider(create: (_) => AddWorkSlotProvider()),
-          ChangeNotifierProvider(create: (_) => ListOfAppointmentProvider()),
-          ChangeNotifierProvider(create: (_) => HistoryProvider()),
-          ChangeNotifierProvider(create: (_) => FeedbackProvider()),
-          ChangeNotifierProvider(create: (_) => SeeallProvider()),
-          ChangeNotifierProvider(create: (_) => CommentProvider()),
-          ChangeNotifierProvider(create: (_) => ForgotPasswordProvider()),
-          ChangeNotifierProvider(create: (_) => Rescheduleprovider()),
-          ChangeNotifierProvider(create: (_) => PatientHistoryProvider()),
-          ChangeNotifierProvider(create: (_) => VideoCallProvider()),
-          ChangeNotifierProvider(create: (_) => FileViewerProvider()),
-          ChangeNotifierProvider(
-              create: (_) => ChatProvider(
-                    firebaseFirestore: firebaseFirestore,
-                    firebaseStorage: firebaseStorage,
-                  )),
-        ],
-        child: const MyApp(),
-      ),
-    );
-  });
+  // 3. On lance les services lourds en arrière-plan (sans bloquer le démarrage)
+  try {
+    Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    ).then((_) => print("DEBUG: Firebase prêt !"));
+    
+    Locales.init(['en', 'ar', 'hi']).then((_) => print("DEBUG: Langues prêtes !"));
+  } catch (e) {
+    print("DEBUG: Erreur d'initialisation ignorée : $e");
+  }
 }
 
 class MyApp extends StatefulWidget {
