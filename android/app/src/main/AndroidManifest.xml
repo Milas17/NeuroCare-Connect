@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.neurocare.connect"
     >
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -92,8 +92,8 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" android:host="dev.divinetechs.com" />
-                <data android:scheme="https" />
+                <data android:scheme="http" android:host="basedtcare.neurocareconnect.tech"/>
+                <data android:scheme="https" android:host="basedtcare.neurocareconnect.tech" />
             </intent-filter>
                 <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
         </activity>
@@ -105,10 +105,10 @@
 
         <meta-data
             android:name="firebase_messaging_auto_init_enabled"
-            android:value="false" />
+            android:value="true" />
         <meta-data
             android:name="firebase_analytics_collection_enabled"
-            android:value="false" />
+            android:value="true" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
