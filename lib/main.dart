@@ -70,8 +70,29 @@ Future<void> main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => GeneralProvider()),
-        // ... gardez tous vos autres providers ici ...
+        ChangeNotifierProvider(create: (context) => GeneralProvider()),
+        ChangeNotifierProvider(create: (context) => AddMedicineProvider()),
+        ChangeNotifierProvider(create: (context) => AddWorkSlotProvider()),
+        ChangeNotifierProvider(
+            create: (context) => AppointmentDetailProvider()),
+        ChangeNotifierProvider(create: (context) => AppointmentProvider()),
+        ChangeNotifierProvider(create: (context) => ChatProvider()),
+        ChangeNotifierProvider(create: (context) => CommentProvider()),
+        ChangeNotifierProvider(create: (context) => FeedbackProvider()),
+        ChangeNotifierProvider(create: (context) => ForgotPasswordProvider()),
+        ChangeNotifierProvider(create: (context) => HistoryProvider()),
+        ChangeNotifierProvider(create: (context) => HomeProvider()),
+        ChangeNotifierProvider(
+            create: (context) => ListOfAppointmentProvider()),
+        ChangeNotifierProvider(create: (context) => NotificationProvider()),
+        ChangeNotifierProvider(create: (context) => EditProfileProvider()),
+        ChangeNotifierProvider(create: (context) => PatientHistoryProvider()),
+        ChangeNotifierProvider(create: (context) => RescheduleProvider()),
+        ChangeNotifierProvider(create: (context) => SeeAllProvider()),
+        ChangeNotifierProvider(
+            create: (context) => WritePrescriptionProvider()),
+        ChangeNotifierProvider(create: (context) => VideoCallProvider()),
+        ChangeNotifierProvider(create: (context) => FileViewerProvider()),
       ],
       child: const MyApp(),
     ),
