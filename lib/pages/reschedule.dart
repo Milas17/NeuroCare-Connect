@@ -1,4 +1,4 @@
-import 'package:date_picker_timeline/date_picker_widget.dart';
+// TEMP DISABLED
 import 'package:yourappname/pages/nodata.dart';
 import 'package:yourappname/provider/rescheduleprovider.dart';
 import 'package:yourappname/utils/colors.dart';
@@ -6,7 +6,6 @@ import 'package:yourappname/utils/dimens.dart';
 import 'package:yourappname/utils/utils.dart';
 import 'package:yourappname/widgets/mytext.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_locales/flutter_locales.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:progress_dialog_null_safe/progress_dialog_null_safe.dart';
 import 'package:provider/provider.dart';
@@ -364,7 +363,7 @@ class _RescheduleState extends State<Reschedule> {
             contentPadding: const EdgeInsets.only(top: 10, left: 10),
             filled: true,
             fillColor: white,
-            hintText: Locales.string(context, "write_your_reasons"),
+            hintText: "write_your_reasons",
             hintStyle: GoogleFonts.roboto(
               fontSize: 16,
               color: grayDark,

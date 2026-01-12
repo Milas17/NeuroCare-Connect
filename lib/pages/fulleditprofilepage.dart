@@ -18,7 +18,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:yourappname/model/specialitymodel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_locales/flutter_locales.dart';
 import 'package:geocoding/geocoding.dart';
 // import 'package:geolocator/geolocator.dart';
 import 'package:location/location.dart' as loc;
@@ -448,7 +447,7 @@ class _FullEditProfileState extends State<FullEditProfile> {
                       black,
                       FontWeight.w500,
                     ),
-                    hintText: Locales.string(context, "enteryourmobilenumber"),
+                    hintText: "enteryourmobilenumber",
                     enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(4.0)),
                       borderSide: BorderSide(color: grayDark, width: 1),

@@ -4,7 +4,6 @@
 // import 'package:yourappname/pages/auth/registration/view/page/resgister_success_screen.dart';
 // import 'package:yourappname/utils/dimens.dart';
 // import 'package:flutter/material.dart';
-// import 'package:flutter_locales/flutter_locales.dart';
 // import 'package:progress_dialog_null_safe/progress_dialog_null_safe.dart';
 // import 'package:progress_stepper/progress_stepper.dart';
 // import 'package:provider/provider.dart';

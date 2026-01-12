@@ -8,7 +8,6 @@ import 'package:yourappname/utils/dimens.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_locales/flutter_locales.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:yourappname/pages/bottombar.dart';
 import 'package:yourappname/pages/login.dart';
@@ -474,7 +473,7 @@ class _LoginselectState extends State<Loginselect> {
             black,
             FontWeight.w500,
           ),
-          labelText: Locales.string(context, "enteryourmobilenumber"),
+          labelText: "enteryourmobilenumber",
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(7.0)),
             borderSide: BorderSide(color: black, width: 1),

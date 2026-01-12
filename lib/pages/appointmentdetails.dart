@@ -15,7 +15,6 @@ import 'package:yourappname/widgets/myimage.dart';
 import 'package:yourappname/widgets/mynetworkimg.dart';
 import 'package:yourappname/widgets/mytext.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_locales/flutter_locales.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:progress_dialog_null_safe/progress_dialog_null_safe.dart';
 import 'package:provider/provider.dart';
@@ -1030,7 +1029,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     MyText(
                       maxline: 3,
                       text:
-                          "${Locales.string(context, "sentyouby")} ${appointmentDetailProvider.appointmentModel.result?[0].doctorFullName.toString() ?? ""}, ${Locales.string(context, "lastcheckupprescription")}",
+                          "${"sentyouby"} ${appointmentDetailProvider.appointmentModel.result?[0].doctorFullName.toString() ?? ""}, ${"lastcheckupprescription"}",
                       fontsize: Dimens.text12Size,
                       color: textTitleColor,
                       fontweight: FontWeight.w500,

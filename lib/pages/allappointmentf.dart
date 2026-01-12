@@ -18,7 +18,6 @@ import 'package:yourappname/widgets/myimage.dart';
 import 'package:yourappname/widgets/mynetworkimg.dart';
 import 'package:yourappname/widgets/mytext.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_locales/flutter_locales.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
@@ -294,7 +293,7 @@ class _AllAppointmentFState extends State<AllAppointmentF>
               decoration: InputDecoration(
                 filled: true,
                 fillColor: gray.withValues(alpha: 0.1),
-                hintText: Locales.string(context, "search_appointments"),
+                hintText: "search_appointments",
                 hintStyle: GoogleFonts.roboto(
                   fontSize: 16,
                   color: grayDark,

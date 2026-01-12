@@ -8,7 +8,6 @@ import 'package:yourappname/utils/sharedpre.dart';
 import 'package:yourappname/utils/utils.dart';
 import 'package:yourappname/widgets/mytext.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_locales/flutter_locales.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 

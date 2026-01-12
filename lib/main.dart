@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const TestApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
 }
 
-class TestApp extends StatelessWidget {
-  const TestApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
           child: Text(
-            'APP DÉMARRE',
-            style: TextStyle(fontSize: 24),
+            'NeuroCare Connect – APP OK',
+            style: TextStyle(fontSize: 22),
           ),
         ),
       ),

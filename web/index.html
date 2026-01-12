@@ -1,44 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <base href="$FLUTTER_BASE_HREF">
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="NeuroCare Connect - Medical Platform">
+  <head>
+    <base href="$FLUTTER_BASE_HREF">
 
-  <meta name="mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="NeuroCare Connect">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" href="favicon.png">
-  <title>NeuroCare Connect</title>
-  <link rel="manifest" href="manifest.json">
+    <title>NeuroCare Connect</title>
+    <meta name="description" content="NeuroCare Connect">
 
-  <style>
-    body { background-color: #ffffff; inset: 0; position: fixed; margin: 0; }
-    .center { margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-  </style>
-</head>
-<body>
-  <picture id="splash">
-      <img class="center" src="splash/img/light-1x.png" alt="Loading...">
-  </picture>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+  </head>
 
-  <script src="flutter_bootstrap.js" async></script>
-  
-  <script>
-    window.addEventListener('load', function(ev) {
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: {{flutter_service_worker_version}},
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-  </script>
-</body>
+  <body>
+    <!-- ⚠️ IMPORTANT : PAS flutter.js, PAS flutter_bootstrap.js -->
+    <script src="main.dart.js" type="application/javascript"></script>
+  </body>
 </html>

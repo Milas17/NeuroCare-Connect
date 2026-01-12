@@ -10,7 +10,6 @@ import 'package:yourappname/widgets/myimage.dart';
 import 'package:yourappname/widgets/mynetworkimg.dart';
 import 'package:yourappname/widgets/mytext.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_locales/flutter_locales.dart';
 import 'package:provider/provider.dart';
 
 class PatientHistory extends StatefulWidget {
@@ -416,7 +415,7 @@ class _PatientHistoryState extends State<PatientHistory> {
                                                             MyText(
                                                               maxline: 3,
                                                               text:
-                                                                  "${Locales.string(context, "sentyouby")} ${patientHistoryProvider.appointmentList?[index].doctorName.toString() ?? ""}, ${Locales.string(context, "lastcheckupprescription")}",
+                                                                  "${"sentyouby"} ${patientHistoryProvider.appointmentList?[index].doctorName.toString() ?? ""}, ${"lastcheckupprescription"}",
                                                               fontsize: Dimens
                                                                   .text12Size,
                                                               color: white,

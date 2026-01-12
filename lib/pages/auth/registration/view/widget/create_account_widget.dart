@@ -1,7 +1,6 @@
 // import 'package:yourappname/pages/auth/registration/provider/doctor_registration_provider.dart';
 // import 'package:dropdown_button2/dropdown_button2.dart';
 // import 'package:flutter/material.dart';
-// import 'package:flutter_locales/flutter_locales.dart';
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -96,7 +95,7 @@
 //                 black,
 //                 FontWeight.w500,
 //               ),
-//               hintText: Locales.string(context, "enteryourmobilenumber"),
+//               hintText: "enteryourmobilenumber",
 //               enabledBorder: const OutlineInputBorder(
 //                 borderRadius: BorderRadius.all(Radius.circular(4.0)),
 //                 borderSide: BorderSide(color: grayDark, width: 1),

@@ -1,6 +1,5 @@
 import 'package:yourappname/utils/common_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_locales/flutter_locales.dart';
 
 import '../utils/colors.dart';
 import '../utils/dimens.dart';

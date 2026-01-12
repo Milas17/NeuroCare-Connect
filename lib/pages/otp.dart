@@ -13,7 +13,6 @@ import 'package:yourappname/utils/firebaseconstant.dart';
 import 'package:yourappname/utils/sharedpre.dart';
 import 'package:yourappname/utils/utils.dart';
 import 'package:yourappname/widgets/mytext.dart';
-import 'package:flutter_locales/flutter_locales.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:pinput/pinput.dart';
 import 'package:progress_dialog_null_safe/progress_dialog_null_safe.dart';
@@ -205,7 +204,7 @@ class _OTPState extends State<OTP> {
                     : MyText(
                         color: colorPrimaryDark,
                         text:
-                            "${Locales.string(context, "resend_otp")} in ${_formatTime(_remainingSeconds)}",
+                            "${"resend_otp"} in ${_formatTime(_remainingSeconds)}",
                         fontsize: Dimens.text18Size,
                         fontweight: FontWeight.w600,
                         multilanguage: false,
