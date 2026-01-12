@@ -1,40 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:neuro_care_connect/provider/generalprovider.dart';
+import 'package:provider/provider.dart';
+import 'firebase_options.dart';
+import 'package:neuro_care_connect/pages/splash.dart';
+import 'package:neuro_care_connect/provider/locale_provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => GeneralProvider()),
+        ChangeNotifierProvider(create: (context) => LocaleProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text(
-            'NeuroCare Connect – APP OK',
-            style: TextStyle(fontSize: 22),
-          ),
-        ),
+    return MaterialApp(
+      title: 'NeuroCare Connect',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: const Splash(),
     );
   }
-}
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  print("🚀 START APP");
-
-  try {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-    print("✅ Firebase OK");
-  } catch (e) {
-    print("❌ Firebase ERROR: $e");
-  }
-
-  runApp(const MyApp());
 }
