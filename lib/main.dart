@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:neuro_care_connect/provider/generalprovider.dart';
+import 'package:yourappname/provider/generalprovider.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
-import 'package:neuro_care_connect/pages/splash.dart';
-import 'package:neuro_care_connect/provider/locale_provider.dart';
+import 'package:yourappname/pages/splash.dart';
+import 'package:yourappname/provider/locale_provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 
