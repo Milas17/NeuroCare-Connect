@@ -23,3 +23,18 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  print("🚀 START APP");
+
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    print("✅ Firebase OK");
+  } catch (e) {
+    print("❌ Firebase ERROR: $e");
+  }
+
+  runApp(const MyApp());
+}
